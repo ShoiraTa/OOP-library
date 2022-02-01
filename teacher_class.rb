@@ -1,4 +1,4 @@
-require './person_class'
+require 'person_class'
 # Teacher class
 class Teacher < Person
   attr_accessor :specialization

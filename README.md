@@ -1,76 +1,54 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+## OOP school library
 
-# Project Name
+This app is develped in ruby and allows users to:
 
-> One paragraph statement about the project.
-
-![screenshot](./app_screenshot.png)
-
-Additional description about the project and its features.
+- Add new students or teachers.
+- Add new books.
+- Save records of who borrowed a given book and when.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby
+- OOP
 
-## Live Demo
+### Technologies used
 
-[Live Demo Link](https://livedemo.com)
-
+- Github
+- GitFlow
+- Visual Studio Code
+- rvm
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+- go to the directory that you want to clone the repository in.
+- right click and choose Git Bash here.
+- type "git clone https://github.com/ShoiraTa/OOP-library.git".
+- go to the repository folder in your command prompt.
+- run bundle install.
 
-### Setup
+or
 
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+- Go to the dist folder and open index.html
 
 ## Authors
 
-👤 **Author1**
+👤 **Shoira**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@shoirata](https://github.com/shoirata)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/shoira-tashpulatova-bab4a7122/)
 
-👤 **Author2**
+![Shoira's GitHub stats](https://github-readme-stats.vercel.app/api?username=shoirata&count_private=true&theme=dark&show_icons=true)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+## Acknowledgments
 
-## 🤝 Contributing
+- Microverse
 
-Contributions, issues, and feature requests are welcome!
+## 📝 License
 
-Feel free to check the [issues page](../../issues/).
+This project is [MIT](MIT.md) licensed.
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.

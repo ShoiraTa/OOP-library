@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+require './corrector'
 # Person class
 class Person
   attr_reader :id
@@ -8,12 +11,17 @@ class Person
     @parent_permission = parent_permission
     @name = name
     @age = age
+    @corrector = Corrector.new
   end
 
   def can_use_services?
     return true if of_age? || parent_permission
 
     false
+  end
+
+  def validate_name
+    @corrector.correct_name(@name)
   end
 
   private

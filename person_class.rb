@@ -3,7 +3,7 @@ require_relative 'rental'
 # Person class
 class Person
   attr_reader :id
-  attr_accessor :name, :age, :parent_permission, :rental
+  attr_accessor :name, :age, :parent_permission, :rentals
 
   def initialize(age, parent_permission = 'true', name = 'Unknown')
     @id = Random.rand(1..500)
@@ -11,6 +11,7 @@ class Person
     @name = name
     @age = age
     @corrector = Corrector.new
+    @rentals = []
   end
 
   def add_rental(date, book)

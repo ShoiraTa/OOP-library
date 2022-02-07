@@ -41,6 +41,13 @@ or
 
 ![Shoira's GitHub stats](https://github-readme-stats.vercel.app/api?username=shoirata&count_private=true&theme=dark&show_icons=true)
 
+👤 **Timo Wester**
+
+- GitHub: [@githubhandle](https://github.com/Timowest12)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/timo-wester-6a0282a7/)
+
+![Timo's GitHub stats](https://github-readme-stats.vercel.app/api?username=Timowest12&count_private=true&theme=dark&show_icons=true)
+
 ## Acknowledgments
 
 - Microverse

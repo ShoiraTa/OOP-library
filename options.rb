@@ -4,12 +4,13 @@ require './book'
 require './rental'
 require './input'
 
+#options class
 class Options
   def initialize
     @books = []
     @persons = []
     @rentals = []
-    @input  = Input.new
+    @input = Input.new
   end
 
   def options
@@ -135,5 +136,4 @@ class Options
       end
     end
   end
-
 end

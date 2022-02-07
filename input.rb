@@ -1,4 +1,5 @@
-class Input 
+#input class
+class Input
   def read
     gets.chomp
   end

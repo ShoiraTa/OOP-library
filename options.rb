@@ -4,6 +4,7 @@ require './book'
 require './rental'
 require './input'
 require './create_book'
+require './create_rental'
 
 # options class
 class Options
@@ -13,6 +14,7 @@ class Options
     @rentals = []
     @input = Input.new
     @create_book = CreateBook.new(@books)
+    @create_rentals = CreateRental.new(@rentals,@books,@persons)
   end
 
   def options
@@ -38,7 +40,7 @@ class Options
     when '4'
       @create_book.create_book
     when '5'
-      create_rental
+      @create_rentals.create_rental
     when '6'
       list_all_rental_by_id
     end
@@ -93,28 +95,28 @@ class Options
   #   puts 'Book created successfully'
   # end
 
-  def create_rental
-    puts 'Please choose a book by number:'
-    @books.each_with_index do |book, index|
-      puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
-    end
-    book_index = @input.read
-    puts 'Please choose a person from the list by number (not id)'
-    @persons.each_with_index do |person, index|
-      puts "#{index}) Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
+  # def create_rental
+  #   puts 'Please choose a book by number:'
+  #   @books.each_with_index do |book, index|
+  #     puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
+  #   end
+  #   book_index = @input.read
+  #   puts 'Please choose a person from the list by number (not id)'
+  #   @persons.each_with_index do |person, index|
+  #     puts "#{index}) Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+  #   end
 
-    person_index = @input.read
-    if book_index.to_i >= @books.length || person_index.to_i >= @persons.length
-      puts 'Wrong Index!'
-      return
-    end
+  #   person_index = @input.read
+  #   if book_index.to_i >= @books.length || person_index.to_i >= @persons.length
+  #     puts 'Wrong Index!'
+  #     return
+  #   end
 
-    print 'Date: '
-    date = @input.read
-    @rentals.push(Rental.new(date, @books[book_index.to_i], @persons[person_index.to_i]))
-    puts 'Rental created successfully'
-  end
+  #   print 'Date: '
+  #   date = @input.read
+  #   @rentals.push(Rental.new(date, @books[book_index.to_i], @persons[person_index.to_i]))
+  #   puts 'Rental created successfully'
+  # end
 
   def list_books
     @books.each do |book|

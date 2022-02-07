@@ -3,6 +3,7 @@ require './teacher_class'
 require './book'
 require './rental'
 require './input'
+require './create_book'
 
 # options class
 class Options
@@ -11,6 +12,7 @@ class Options
     @persons = []
     @rentals = []
     @input = Input.new
+    @create_book = CreateBook.new(@books)
   end
 
   def options
@@ -34,7 +36,7 @@ class Options
     when '3'
       create_person
     when '4'
-      create_book
+      @create_book.create_book
     when '5'
       create_rental
     when '6'
@@ -82,14 +84,14 @@ class Options
     @persons.push(Student.new(age: age.to_i, name: name, parent_permission: parent_permission))
   end
 
-  def create_book
-    print 'Title: '
-    title = @input.read
-    print 'Author: '
-    author = @input.read
-    @books.push(Book.new(title, author))
-    puts 'Book created successfully'
-  end
+  # def create_book
+  #   print 'Title: '
+  #   title = @input.read
+  #   print 'Author: '
+  #   author = @input.read
+  #   @books.push(Book.new(title, author))
+  #   puts 'Book created successfully'
+  # end
 
   def create_rental
     puts 'Please choose a book by number:'

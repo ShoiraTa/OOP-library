@@ -2,6 +2,7 @@ require './student_class'
 require './teacher_class'
 require './book'
 require './rental'
+require './input'
 
 # App class
 class App
@@ -9,6 +10,7 @@ class App
     @books = []
     @persons = []
     @rentals = []
+    @input  = Input.new
   end
 
   def run
@@ -16,7 +18,7 @@ class App
     puts 'Welcome to School Library App!'
     while user_input != '7'
       options
-      user_input = gets.chomp
+      user_input = @input.read
       options_cases(user_input)
     end
     puts 'Come back soon!'
@@ -53,7 +55,7 @@ class App
 
   def create_person
     print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
-    student_or_teacher = gets.chomp
+    student_or_teacher = @input.read
     case student_or_teacher
     when '1'
       create_student
@@ -68,21 +70,21 @@ class App
 
   def create_teacher
     print 'Age: '
-    age = gets.chomp
+    age = @input.read
     print 'Name: '
-    name = gets.chomp
+    name = @input.read
     print 'Specialization: '
-    specialization = gets.chomp
+    specialization = @input.read
     @persons.push(Teacher.new(specialization: specialization, age: age.to_i, name: name))
   end
 
   def create_student
     print 'Age: '
-    age = gets.chomp
+    age = @input.read
     print 'Name: '
-    name = gets.chomp
+    name = @input.read
     print 'Has parent permission? [Y/N]: '
-    parent_permission = gets.chomp
+    parent_permission = @input.read
     unless parent_permission.upcase == 'Y' || parent_permission.upcase == 'N'
       puts 'Wrong Input!'
       return
@@ -93,9 +95,9 @@ class App
 
   def create_book
     print 'Title: '
-    title = gets.chomp
+    title = @input.read
     print 'Author: '
-    author = gets.chomp
+    author = @input.read
     @books.push(Book.new(title, author))
     puts 'Book created successfully'
   end
@@ -105,20 +107,20 @@ class App
     @books.each_with_index do |book, index|
       puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
     end
-    book_index = gets.chomp
+    book_index = @input.read
     puts 'Please choose a person from the list by number (not id)'
     @persons.each_with_index do |person, index|
       puts "#{index}) Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
 
-    person_index = gets.chomp
+    person_index = @input.read
     if book_index.to_i >= @books.length || person_index.to_i >= @persons.length
       puts 'Wrong Index!'
       return
     end
 
     print 'Date: '
-    date = gets.chomp
+    date = @input.read
     @rentals.push(Rental.new(date, @books[book_index.to_i], @persons[person_index.to_i]))
     puts 'Rental created successfully'
   end
@@ -137,7 +139,7 @@ class App
 
   def list_all_rental_by_id
     print 'ID of person: '
-    person_id = gets.chomp
+    person_id = @input.read
     puts 'Rentals:'
     @rentals.each do |rental|
       if rental.person.id.to_s == person_id

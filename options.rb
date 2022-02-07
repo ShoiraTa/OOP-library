@@ -7,7 +7,6 @@ require './input'
 require './create_book'
 require './create_rental'
 
-
 # options class
 class Options
   def initialize
@@ -17,7 +16,7 @@ class Options
     @input = Input.new
     @create_book = CreateBook.new(@books)
     @create_person = CreatePerson.new(@persons)
-    @create_rentals = CreateRental.new(@rentals,@books,@persons)
+    @create_rentals = CreateRental.new(@rentals, @books, @persons)
   end
 
   def options

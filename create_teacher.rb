@@ -1,7 +1,7 @@
 require './input'
 
+# CreateTeacher
 class CreateTeacher
-
   def initialize(persons)
     @input = Input.new
     @persons = persons
@@ -17,5 +17,4 @@ class CreateTeacher
     @persons.push(Teacher.new(specialization: specialization, age: age.to_i, name: name))
     puts 'Teacher created successfully'
   end
-
 end

@@ -1,7 +1,7 @@
 require './input'
 
+# CreateStudent
 class CreateStudent
-
   def initialize(persons)
     @input = Input.new
     @persons = persons
@@ -22,5 +22,4 @@ class CreateStudent
     @persons.push(Student.new(age: age.to_i, name: name, parent_permission: parent_permission))
     puts 'Student created successfully'
   end
-
 end

@@ -4,7 +4,7 @@ require './book'
 require './rental'
 require './input'
 
-#options class
+# options class
 class Options
   def initialize
     @books = []

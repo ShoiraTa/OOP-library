@@ -7,8 +7,7 @@ module PersonController
   def load_persons
     data = []
     file = './persons.json'
-    File.write(file, '[]') unless File.exist?(file)
-    if File.read(file) != ''
+    if File.exist?(file) &&  File.read(file) != ''
       JSON.parse(File.read(file)).each do |person|
         if person['class'] == 'Student'
           data.push(Student.new(id: person['id'], name: person['name'], age: person['age'],
@@ -20,6 +19,8 @@ module PersonController
                               parent_permission: person['parentPermission'],
                               specialization: person['specialization']))
       end
+    else
+      File.write(file, '[]')
     end
     data
   end

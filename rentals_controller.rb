@@ -14,7 +14,15 @@ module RentalsController
   def load_rentals
     data = []
     file = './rentals.json'
-    File.write(file, '[]') unless File.exist?(file)
+    if File.exist?(file) && File.read(file) != ''
+      JSON.parse(File.read(file)).each do |rental|
+        book = get_book_title(rental['book'])
+        person_id = get_person_id(rental['person'])
+        data.push(Rental.new(rental['date'], book, person_id))
+      end
+    else
+      File.write(file, '[]')
+    end
     data
   end
 

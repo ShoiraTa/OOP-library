@@ -6,17 +6,20 @@ require './rental'
 require './input'
 require './create_book'
 require './create_rental'
+require './book_controller'
 
 # options class
 class Options
+  include BookController
   def initialize
-    @books = []
+    @books = load_books
     @persons = []
     @rentals = []
     @input = Input.new
     @create_book = CreateBook.new(@books)
     @create_person = CreatePerson.new(@persons)
     @create_rentals = CreateRental.new(@rentals, @books, @persons)
+    # @save =  save_books
   end
 
   def options
@@ -70,4 +73,5 @@ class Options
       end
     end
   end
+
 end

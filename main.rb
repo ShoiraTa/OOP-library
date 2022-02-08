@@ -7,6 +7,7 @@ require './options'
 
 # App class
 class App
+
   def initialize
     @input = Input.new
     @options = Options.new
@@ -21,7 +22,9 @@ class App
       @options.options_cases(user_input)
     end
     puts 'Come back soon!'
+    @options.save_books
   end
+
 end
 
 def main

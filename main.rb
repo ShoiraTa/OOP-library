@@ -21,6 +21,9 @@ class App
       @options.options_cases(user_input)
     end
     puts 'Come back soon!'
+    @options.save_books
+    @options.save_persons
+    @options.save_rentals
   end
 end
 

@@ -1,4 +1,5 @@
 require_relative 'input'
+require './options'
 
 # CreateBook
 class CreateBook
@@ -14,5 +15,6 @@ class CreateBook
     author = @input.read
     @books_arr.push(Book.new(title, author))
     puts 'Book created successfully'
+    @save
   end
 end

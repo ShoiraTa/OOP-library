@@ -3,7 +3,6 @@ require './options'
 
 # CreateBook
 class CreateBook
-
   def initialize(books_arr)
     @books_arr = books_arr
     @input = Input.new
@@ -18,5 +17,4 @@ class CreateBook
     puts 'Book created successfully'
     @save
   end
-
 end

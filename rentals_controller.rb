@@ -3,11 +3,11 @@ require './rental'
 
 # rentalscontoller
 module RentalsController
-  def getBookTitle(title)
+  def get_book_title(title)
     @books.each { |book| return book if book.title == title }
   end
 
-  def getPersonId(id)
+  def get_person_id(id)
     @persons.each { |person| return person if person.id == id }
   end
 
@@ -16,9 +16,9 @@ module RentalsController
     file = './rentals.json'
     if File.read(file) != ''
       JSON.parse(File.read(file)).each do |rental|
-        book = getBookTitle(rental['book'])
-        personId = getPersonId(rental['person'])
-        data.push(Rental.new(rental['date'], book, personId))
+        book = get_book_title(rental['book'])
+        person_id = get_person_id(rental['person'])
+        data.push(Rental.new(rental['date'], book, person_id))
       end
     end
 

@@ -2,7 +2,7 @@ require 'json'
 require './student_class'
 require './teacher_class'
 
-#person controller
+# person controller
 module PersonController
   def load_persons
     data = []

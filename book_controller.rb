@@ -1,7 +1,7 @@
 require 'json'
 require './book'
 
-#bookcontroller
+# bookcontroller
 module BookController
   def load_books
     data = []

@@ -1,7 +1,7 @@
 require 'json'
 require './rental'
 
-#rentalscontoller
+# rentalscontoller
 module RentalsController
   def getBookTitle(title)
     @books.each { |book| return book if book.title == title }

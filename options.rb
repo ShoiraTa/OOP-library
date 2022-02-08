@@ -67,7 +67,8 @@ class Options
         puts "[#{person.class}], Name: #{person.name}, ID: #{person.id}, Age: #{person.age} }"
       end
       if person.class.to_s == 'Teacher'
-        puts "[#{person.class}], Name: #{person.name}, ID: #{person.id}, Specialization: #{person.specialization},  Age: #{person.age}"
+        puts "[#{person.class}], Name: #{person.name}, ID: #{person.id}
+        , Specialization: #{person.specialization},  Age: #{person.age}"
       end
     end
   end

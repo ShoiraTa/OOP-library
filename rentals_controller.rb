@@ -14,9 +14,7 @@ module RentalsController
   def load_rentals
     data = []
     file = './rentals.json'
-    if !File.exists?(file)
-      File.open(file, "w") {|f| f.write("[]") }
-    end
+    File.open(file, 'w') { |f| f.write('[]') } unless File.exist?(file)
     if File.read(file) != ''
       JSON.parse(File.read(file)).each do |rental|
         book = get_book_title(rental['book'])

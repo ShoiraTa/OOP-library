@@ -6,6 +6,9 @@ module BookController
   def load_books
     data = []
     file = './books.json'
+    if !File.exists?(file)
+      File.open(file, "w") {|f| f.write("[]") }
+    end
     if File.read(file) != ''
       JSON.parse(File.read(file)).each do |book|
         data.push(Book.new(book['Title'], book['Author']))

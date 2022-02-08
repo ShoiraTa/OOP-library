@@ -15,7 +15,7 @@ module BookController
   end
 
   def save_books
-    data = [{ "Title": 'Harry', "Author": 'JK' }]
+    data = [{ Title: 'Harry', Author: 'JK' }]
     puts 'data'
     @books.each do |book|
       data.push({ Title: book.title, Author: book.author })

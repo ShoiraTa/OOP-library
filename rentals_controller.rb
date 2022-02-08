@@ -15,14 +15,6 @@ module RentalsController
     data = []
     file = './rentals.json'
     File.open(file, 'w') { |f| f.write('[]') } unless File.exist?(file)
-    if File.read(file) != ''
-      JSON.parse(File.read(file)).each do |rental|
-        book = get_book_title(rental['book'])
-        person_id = get_person_id(rental['person'])
-        data.push(Rental.new(rental['date'], book, person_id))
-      end
-    end
-
     data
   end
 

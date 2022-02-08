@@ -23,6 +23,7 @@ class App
     puts 'Come back soon!'
     @options.save_books
     @options.save_persons
+    @options.save_rentals
   end
 end
 

@@ -8,15 +8,17 @@ require './create_book'
 require './create_rental'
 require './book_controller'
 require './person_controller'
+require './rentals_controller'
 
 # options class
 class Options
   include BookController
   include PersonController
+  include RentalsController
   def initialize
     @books = load_books
     @persons = load_persons
-    @rentals = []
+    @rentals = load_rentals
     @input = Input.new
     @create_book = CreateBook.new(@books)
     @create_person = CreatePerson.new(@persons)
@@ -62,11 +64,11 @@ class Options
   def list_people
     @persons.each do |person|
       if person.class.to_s == 'Student'
-      puts "[#{person.class}], Name: #{person.name}, ID: #{person.id}, Age: #{person.age} }"
+        puts "[#{person.class}], Name: #{person.name}, ID: #{person.id}, Age: #{person.age} }"
       end
       if person.class.to_s == 'Teacher'
         puts "[#{person.class}], Name: #{person.name}, ID: #{person.id}, Specialization: #{person.specialization},  Age: #{person.age}"
-        end
+      end
     end
   end
 

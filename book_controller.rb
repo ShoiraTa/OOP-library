@@ -6,7 +6,7 @@ module BookController
   def load_books
     data = []
     file = './books.json'
-    File.open(file, 'w') { |f| f.write('[]') } unless File.exist?(file)
+    File.write(file, '[]') unless File.exist?(file)
     data
   end
 

@@ -6,7 +6,6 @@ class CreateStudent
     @input = Input.new
     @persons = persons
   end
-
   def create_student
     print 'Age: '
     age = @input.read

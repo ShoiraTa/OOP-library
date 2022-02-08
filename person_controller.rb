@@ -13,11 +13,11 @@ module PersonController
           data.push(Student.new(id: person['id'], name: person['name'], age: person['age'],
                                 parent_permission: person['parentPermission']))
         end
-        if person['class'] == 'Teacher'
-          data.push(Teacher.new(id: person['id'], name: person['name'], age: person['age'],
-                                parent_permission: person['parentPermission'],
-                                 specialization: person['specialization']))
-        end
+        next unless person['class'] == 'Teacher'
+
+        data.push(Teacher.new(id: person['id'], name: person['name'], age: person['age'],
+                              parent_permission: person['parentPermission'],
+                              specialization: person['specialization']))
       end
     end
     data

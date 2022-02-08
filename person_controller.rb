@@ -24,7 +24,12 @@ module PersonController
   def save_persons
     data = []
     @persons.each do |person|
+      if person.instance_of?(Teacher)
       data.push({ id: person.id, name: person.name, age: person.age, parent_permission: person.parent_permission, class:person.class, specialization:person.specialization })
+      end
+      if person.instance_of?(Student)
+        data.push({ id: person.id, name: person.name, age: person.age, parent_permission: person.parent_permission, class:person.class})
+        end
     end
     File.write('persons.json', JSON.generate(data))
   end

@@ -8,7 +8,7 @@ describe Teacher do
     @Teacher = Teacher.new specialization:'Math', age:44, name:'herbert'
   end
 
-  it 'mike is an instance of student' do
+  it 'mike is an instance of teacher' do
     expect(@Teacher.name).to eq 'herbert'
   end
 
